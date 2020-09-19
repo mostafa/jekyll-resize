@@ -55,6 +55,7 @@ module Jekyll
       if !File.exist?(destination_file_name)
         URI.open(url) do |image|
           File.open(destination, "wb") do |file|
+            puts "Downloading #{filename} to #{destination_file_name}"
             file.write(image.read)
           end
         end
